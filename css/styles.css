@@ -14,6 +14,7 @@
 
 body {
   overflow-x: hidden;
+  margin: 0;
 }
 
 table {
@@ -528,8 +529,6 @@ div.wpcf7-mail-sent-ok {
 }
 
 @media only screen and (max-width: 767px) {
-  #logo {
-  }
   #searchform {
     display: none;
   }
@@ -569,6 +568,4 @@ div.wpcf7-mail-sent-ok {
 }
 
 @media (max-width: 350px) {
-  #logo {
-  }
 }
