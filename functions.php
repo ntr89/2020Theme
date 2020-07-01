@@ -1,5 +1,18 @@
 <?php
 
+function portfolio_stuff() {
+    wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
+    wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    
+    
+      wp_enqueue_script('custom-scripts', get_theme_file_uri('/js/custom-scripts.js'), NULL, '1.0', true);
+      wp_enqueue_style('main-styles', get_theme_file_uri('/css/styles.css'));
+  }
+  
+  add_action('wp_enqueue_scripts', 'portfolio_stuff');
+
+
+
 // Project Post Type
 
 function wpdocs_codex_book_init() {
@@ -36,6 +49,7 @@ function wpdocs_codex_book_init() {
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
+        'menu_icon'       => 'dashicons-media-code',
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'project' ),
         'capability_type'    => 'post',
@@ -49,7 +63,6 @@ function wpdocs_codex_book_init() {
  
     register_post_type( 'project', $args );
 }
- 
 add_action( 'init', 'wpdocs_codex_book_init' );
 
 ?>
