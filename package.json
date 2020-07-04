@@ -2,7 +2,7 @@
   "name": "2020theme",
   "version": "1.0.0",
   "description": "2020Portfolio",
-  "main": "index.js",
+  "main": "index.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/ntr89/2020Theme/issues"
   },
-  "homepage": "https://github.com/ntr89/2020Theme#readme"
+  "homepage": "https://github.com/ntr89/2020Theme#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-newer": "^1.4.0"
+  }
 }
