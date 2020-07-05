@@ -1,27 +1,18 @@
 // GULP Config
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const sourcemaps = require("gulp-sourcemaps");
 
-// including gulp and plugins
-var gulp = require("gulp"),
-  newer = require("gulp-newer"),
-  imagemin = require("gulp-imagemin");
-
-// file locations
-var source = "source/",
-  dest = "",
-  images = {
-    in: source + "images/*.*",
-    out: dest + "images/",
-  };
-
-// manage images
-gulp.task("images", function () {
-  console.log(images.out);
-  console.log(images.in);
+gulp.task("sass", function () {
   return gulp
-    .src(images.in)
-    .pipe(newer(images.out))
-    .pipe(imagemin())
-    .pipe(gulp.dest(images.out));
+    .src("./source/sass/**/*.scss")
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("css"));
+  done();
 });
-// default task
-gulp.task("default", function () {});
+
+gulp.task("watch", function () {
+  gulp.watch("./source/sass/**/*.scss", gulp.series(["sass"]));
+});

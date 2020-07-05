@@ -6,7 +6,7 @@ function portfolio_stuff() {
     
     
       wp_enqueue_script('custom-scripts', get_theme_file_uri('/js/custom-scripts.js'), NULL, '1.0', true);
-      wp_enqueue_style('main-styles', get_theme_file_uri('/css/styles.css'));
+      wp_enqueue_style('main-styles', get_theme_file_uri('/css/main.css'));
   }
   
   add_action('wp_enqueue_scripts', 'portfolio_stuff');
