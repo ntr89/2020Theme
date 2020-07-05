@@ -16,7 +16,7 @@
     return false;
   });
 })(jQuery);
-
+document.title = "PORTFOLIO";
 (function ($) {
   $(".button_for_menu").click(function () {
     $(this).toggleClass("active");
