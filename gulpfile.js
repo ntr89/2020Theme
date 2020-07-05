@@ -6,6 +6,10 @@ const browserSync = require("browser-sync").create();
 const less = require("gulp-less");
 const cssnano = require("gulp-cssnano");
 const uglify = require("gulp-uglify");
+const rename = require("gulp-rename");
+const concat = require("gulp-concat");
+const imagemin = require("gulp-imagemin");
+const cache = require("gulp-cache");
 
 // SASS
 
@@ -16,6 +20,13 @@ gulp.task("sass", function () {
     .pipe(sass())
     .pipe(cssnano())
     .pipe(sourcemaps.write("."))
+    .pipe(
+      rename(function (path) {
+        if (!path.extname.endsWith(".map")) {
+          path.basename += ".min";
+        }
+      })
+    )
     .pipe(gulp.dest("css"));
   done();
 });
@@ -24,18 +35,41 @@ gulp.task("sass", function () {
 
 gulp.task("less", function () {
   return gulp
-    .src("./source/less/**/*.less")
+    .src("./source/less/styles.less")
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(cssnano())
     .pipe(sourcemaps.write("."))
+    .pipe(rename("./styles.min.css"))
     .pipe(gulp.dest("css"));
   done();
 });
 
 // JS
 gulp.task("javascript", function () {
-  return gulp.src("./source/js/**/*.js").pipe(uglify()).pipe(gulp.dest("js"));
+  return (
+    gulp
+      // .src("./source/js/**/*.js")
+      .src(["./source/js/alert.js", "./source/js/custom-scripts.js"])
+      .pipe(concat("scripts.js"))
+      .pipe(uglify())
+      .pipe(
+        rename({
+          suffix: ".min",
+        })
+      )
+      .pipe(gulp.dest("js"))
+  );
+  done();
+});
+
+// IMAGES
+
+gulp.task("imagemin", function (done) {
+  return gulp
+    .src("./source/images/**/*.+(png|jpg|gif|svg)")
+    .pipe(cache(imagemin()))
+    .pipe(gulp.dest("images"));
   done();
 });
 
@@ -60,51 +94,16 @@ gulp.task("watch", function () {
         "./source/less/**/*.less",
         "**/*.php",
         "./source/js/**/*.js",
+        "./source/images/**/*.+(png|jpg|gif|svg)",
       ],
-      gulp.series(["sass", "less", "javascript"])
+      gulp.series(["sass", "less", "javascript", "imagemin"])
     )
     .on("change", browserSync.reload);
 });
 
-// // including gulp and plugins
-// var gulp = require("gulp"),
-//   newer = require("gulp-newer"),
-//   imagemin = require("gulp-imagemin"),
-//   del = require("del");
+gulp.task("clear-cache", function (done) {
+  return cache.clearAll(done);
+});
 
-// // file locations
-// var source = "source/",
-//   dest = "",
-//   images = {
-//     in: source + "images/*.*",
-//     out: dest + "images/",
-//   };
-// // cleaning build folder, turned OFF for now
-// // gulp.task("clean", function() {
-// //     del([
-// //         dest + "*"
-// //     ]);
-// // });
-// // manage images
-// gulp.task("images", function () {
-//   return gulp
-//     .src(images.in)
-//     .pipe(newer(images.out))
-//     .pipe(imagemin())
-//     .pipe(gulp.dest(images.out));
-// });
-// gulp.task("watch", function () {
-//   gulp.watch(images.in, gulp.series(["images"]));
-// });
-// // default task
-// // gulp.task("default", gulp.parallel("watch", "images"), function () {
-// //   //   runSequence(["images"]);
-// //   //image changes
-// // });
-// function defaultTask(cb) {
-//   // place code for your default task here
-//   ["watch", "images"];
-//   cb();
-// }
-
-// exports.default = defaultTask;
+// DEFAULT
+gulp.task("default", gulp.series(["watch"]));
