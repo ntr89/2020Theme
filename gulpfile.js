@@ -11,6 +11,8 @@ const concat = require("gulp-concat");
 const imagemin = require("gulp-imagemin");
 const cache = require("gulp-cache");
 const htmlmin = require("gulp-htmlmin");
+const autoprefixer = require("gulp-autoprefixer");
+const babel = require("gulp-babel");
 
 // SASS
 
@@ -18,6 +20,7 @@ gulp.task("sass", function (done) {
   return gulp
     .src("./source/sass/**/*.scss")
     .pipe(sourcemaps.init())
+    .pipe(autoprefixer())
     .pipe(sass())
     .pipe(cssnano())
     .pipe(sourcemaps.write("."))
@@ -52,6 +55,11 @@ gulp.task("javascript", function (done) {
     gulp
       // .src("./source/js/**/*.js")
       .src(["./source/js/alert.js", "./source/js/custom-scripts.js"])
+      .pipe(
+        babel({
+          presets: ["@babel/env"],
+        })
+      )
       .pipe(concat("scripts.js"))
       .pipe(uglify())
       .pipe(
