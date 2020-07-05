@@ -10,10 +10,11 @@ const rename = require("gulp-rename");
 const concat = require("gulp-concat");
 const imagemin = require("gulp-imagemin");
 const cache = require("gulp-cache");
+const htmlmin = require("gulp-htmlmin");
 
 // SASS
 
-gulp.task("sass", function () {
+gulp.task("sass", function (done) {
   return gulp
     .src("./source/sass/**/*.scss")
     .pipe(sourcemaps.init())
@@ -33,7 +34,7 @@ gulp.task("sass", function () {
 
 // LESS
 
-gulp.task("less", function () {
+gulp.task("less", function (done) {
   return gulp
     .src("./source/less/styles.less")
     .pipe(sourcemaps.init())
@@ -46,7 +47,7 @@ gulp.task("less", function () {
 });
 
 // JS
-gulp.task("javascript", function () {
+gulp.task("javascript", function (done) {
   return (
     gulp
       // .src("./source/js/**/*.js")
@@ -60,6 +61,21 @@ gulp.task("javascript", function () {
       )
       .pipe(gulp.dest("js"))
   );
+  done();
+});
+
+// PHP
+
+gulp.task("php", function (done) {
+  return gulp
+    .src("./source/**/*.php")
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true,
+        ignoreCustomFragments: [/<%[\s\S]*?%>/, /<\?[=|php]?[\s\S]*?\?>/],
+      })
+    )
+    .pipe(gulp.dest("./"));
   done();
 });
 
