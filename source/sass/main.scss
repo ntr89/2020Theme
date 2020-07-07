@@ -3,37 +3,6 @@ body {
   margin: 0;
 }
 
-table {
-  border-collapse: collapse;
-}
-
-table,
-tbody,
-th,
-td {
-  border: 1px solid black;
-  border-top: 1px solid black !important;
-  background-color: #f2f2f2;
-  color: black;
-  text-align: center;
-}
-
-.footer-links {
-  position: relative;
-  float: right;
-}
-.footer-links a {
-  color: #ffffff;
-}
-#footer-bottom {
-  color: #111111;
-}
-.et-fixed-header#main-header,
-.et-fixed-header#main-header .nav li ul,
-.et-fixed-header .et-search-form {
-  /* background-color: rgba(255,255,255,0.96); */
-  background: rgba(255, 255, 255, 0) !important;
-}
 .logo_container {
   position: fixed !important;
   top: 10px;
@@ -155,64 +124,6 @@ td {
 #main_nav li a {
   color: #111111;
 }
-.et_pb_section_1 {
-  border-bottom-right-radius: 0;
-}
-.et_pb_section_2 {
-  border-top-left-radius: 0;
-}
-.systech_laptop {
-  transform: translate(200px, -305px);
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.71, 1.54);
-}
-.elaborate {
-  transform: translate(-300px, -305px);
-  opacity: 1;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.71, 1.54);
-}
-
-.systech_desktop {
-  transform: translateX(500px);
-
-  opacity: 0;
-
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.71, 1.54);
-}
-.radiate {
-  transform: translate(0px, 0px);
-  opacity: 1;
-
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.71, 1.54);
-}
-.systech_tablet {
-  position: absolute;
-  top: 200px;
-  right: 200px;
-  opacity: 0;
-
-  transform: translateX(500px);
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.71, 1.54);
-}
-.aggrevate {
-  opacity: 1;
-  transform: translateX(0px);
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.71, 1.54);
-}
-
-.systech_mobile {
-  position: absolute;
-  top: 340px;
-  right: 500px;
-  opacity: 0;
-  transform: translateX(500px);
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.71, 1.54);
-}
-.anticipate {
-  opacity: 1;
-  transform: translateX(0px);
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.71, 1.54);
-}
 .home .et_pb_portfolio .project {
   display: grid;
   grid-template-areas:
@@ -294,24 +205,7 @@ td {
 .btn-6:active {
   background-color: #9a713f;
 }
-#searchform {
-  position: rlative;
-  float: right;
-  width: 300px;
-}
-#searchform #search {
-  position: relative;
-  float: left;
-  width: 258px;
-  border: none;
-  padding: 10px 15px;
-}
-.search_icon {
-  cursor: pointer;
-  position: relative;
-  float: right;
-  width: 42px;
-}
+
 #responsive-menu-container {
   z-index: 99999 !important;
 }
@@ -434,7 +328,7 @@ div.wpcf7-mail-sent-ok {
 .button_for_menu {
   display: inline-block;
   width: 167px;
-  height: 96px;
+  height: 80px;
   cursor: pointer;
   text-decoration: none;
   position: fixed;
@@ -499,28 +393,12 @@ div.wpcf7-mail-sent-ok {
 
 /* end new menu button */
 
-.hider8 {
-  position: relative;
-  float: left;
-}
 @media only screen and (max-width: 1200px) {
 }
 @media only screen and (max-width: 980px) {
-  #page-container {
-    padding-top: 0 !important;
-  }
-  .home .et_pb_portfolio .project:nth-child(even) {
-    transform: translateX(0px);
-  }
 }
 
 @media only screen and (max-width: 767px) {
-  #searchform {
-    display: none;
-  }
-  #heade-right {
-    display: none;
-  }
   #main_nav {
     left: 5%;
     top: 25%;
