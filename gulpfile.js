@@ -1,4 +1,3 @@
-// GULP Config
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const sourcemaps = require("gulp-sourcemaps");
@@ -13,12 +12,23 @@ const cache = require("gulp-cache");
 const htmlmin = require("gulp-htmlmin");
 const autoprefixer = require("gulp-autoprefixer");
 const babel = require("gulp-babel");
+const plumber = require("gulp-plumber");
+const notifier = require("gulp-notifier");
+
+filesPath = {
+  sass: "./source/sass/**/*.scss",
+  less: "./source/less/styles.less",
+  js: "./source/js/**/*.js",
+  images: "./source/images/**/*.+(png|jpg|gif|svg)",
+  php: "./source/**/*.php",
+};
 
 // SASS
 
 gulp.task("sass", function (done) {
   return gulp
-    .src("./source/sass/**/*.scss")
+    .src(filesPath.sass)
+    .pipe(plumber({ errorHandler: notifier.error }))
     .pipe(sourcemaps.init())
     .pipe(autoprefixer())
     .pipe(sass())
@@ -39,7 +49,8 @@ gulp.task("sass", function (done) {
 
 gulp.task("less", function (done) {
   return gulp
-    .src("./source/less/styles.less")
+    .src(filesPath.less)
+    .pipe(plumber({ errorHandler: notifier.error }))
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(cssnano())
@@ -55,6 +66,7 @@ gulp.task("javascript", function (done) {
     gulp
       // .src("./source/js/**/*.js")
       .src(["./source/js/alert.js", "./source/js/custom-scripts.js"])
+      .pipe(plumber({ errorHandler: notifier.error }))
       .pipe(
         babel({
           presets: ["@babel/env"],
@@ -76,7 +88,8 @@ gulp.task("javascript", function (done) {
 
 gulp.task("php", function (done) {
   return gulp
-    .src("./source/**/*.php")
+    .src(filesPath.php)
+    .pipe(plumber({ errorHandler: notifier.error }))
     .pipe(
       htmlmin({
         collapseWhitespace: true,
@@ -91,19 +104,11 @@ gulp.task("php", function (done) {
 
 gulp.task("imagemin", function (done) {
   return gulp
-    .src("./source/images/**/*.+(png|jpg|gif|svg)")
+    .src(filesPath.images)
     .pipe(cache(imagemin()))
     .pipe(gulp.dest("images"));
   done();
 });
-
-// // BROWSER SYNC
-// gulp.task("browser-sync", function () {
-//   browserSync.init({
-//     proxy: "dev.potapov.io",
-//     projectURL: "dev.potapov.io",
-//   });
-// });
 
 // WATCH with browserSync
 gulp.task("watch", function () {
@@ -114,20 +119,24 @@ gulp.task("watch", function () {
   gulp
     .watch(
       [
-        "./source/sass/**/*.scss",
-        "./source/less/**/*.less",
-        "**/*.php",
-        "./source/js/**/*.js",
-        "./source/images/**/*.+(png|jpg|gif|svg)",
+        filesPath.sass,
+        filesPath.less,
+        filesPath.php,
+        filesPath.js,
+        filesPath.images,
       ],
-      gulp.series(["sass", "less", "javascript", "imagemin"])
+      gulp.parallel(["sass", "less", "javascript", "imagemin"])
     )
     .on("change", browserSync.reload);
 });
 
+// Clear Cache
 gulp.task("clear-cache", function (done) {
   return cache.clearAll(done);
 });
 
+// Serve
+gulp.task("serve", gulp.parallel(["sass", "less", "javascript", "imagemin"]));
+
 // DEFAULT
-gulp.task("default", gulp.series(["watch"]));
+gulp.task("default", gulp.series(["serve", "watch"]));
