@@ -125,7 +125,7 @@ gulp.task("watch", function () {
         filesPath.js,
         filesPath.images,
       ],
-      gulp.parallel(["sass", "less", "javascript", "imagemin"])
+      gulp.parallel(["sass", "less", "php", "javascript", "imagemin"])
     )
     .on("change", browserSync.reload);
 });
@@ -136,7 +136,10 @@ gulp.task("clear-cache", function (done) {
 });
 
 // Serve
-gulp.task("serve", gulp.parallel(["sass", "less", "javascript", "imagemin"]));
+gulp.task(
+  "serve",
+  gulp.parallel(["sass", "less", "php", "javascript", "imagemin"])
+);
 
 // DEFAULT
 gulp.task("default", gulp.series(["serve", "watch"]));
