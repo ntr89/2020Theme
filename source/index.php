@@ -5,7 +5,7 @@ get_header(); ?>
 
 <?php echo do_shortcode( '[rev_slider alias="slider-1"][/rev_slider]' ); ?>
 <div class="container container--narrow page-section">
-  testing2
+  
 <?php require 'portfolio_loop.php'; ?>
 <?php
   while(have_posts()) {
