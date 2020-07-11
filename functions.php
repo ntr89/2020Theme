@@ -12,6 +12,8 @@ function portfolio_stuff() {
   add_action('wp_enqueue_scripts', 'portfolio_stuff');
 
 
+  add_theme_support('post-thumbnails');
+  set_post_thumbnail_size( 200, 200, true );
 
 // Project Post Type
 
@@ -31,7 +33,7 @@ function wpdocs_codex_book_init() {
         'parent_item_colon'     => __( 'Parent Projects:', 'textdomain' ),
         'not_found'             => __( 'No Projects found.', 'textdomain' ),
         'not_found_in_trash'    => __( 'No Projects found in Trash.', 'textdomain' ),
-        'featured_image'        => _x( 'Project Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+        'featured_image'        => __( 'Project Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
         'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
         'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
         'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'textdomain' ),

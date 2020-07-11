@@ -2,14 +2,14 @@
 
 get_header(); ?>
 
-
+<div class="scroll-container">  
 <?php echo do_shortcode( '[rev_slider alias="slider-1"][/rev_slider]' ); ?>
 <div class="container container--narrow page-section">
-  <section>
+ 
     <div class="container">
 <?php require 'portfolio_loop.php'; ?>
 </div>
-</section>
+
 <?php
   while(have_posts()) {
     the_post(); ?>
@@ -30,7 +30,7 @@ get_header(); ?>
   echo paginate_links();
 ?>
 </div>
-
 <?php get_footer();
 
 ?>
+</div>
