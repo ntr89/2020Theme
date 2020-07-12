@@ -23,7 +23,7 @@ section {
 /* section:nth-child(odd) {
    background-color: #dddddd;
 }*/
-$flow_layers: #23232378;
+$flow_layers: #2323231c;
 .background_odd {
   background-color: $flow_layers;
   border-bottom-right-radius: 0;
@@ -33,7 +33,17 @@ $flow_layers: #23232378;
 .background_v4 {
   background-color: $flow_layers;
 }
-
+.dropback {
+  background-color: #d2d2d2;
+}
+.background_v3 {
+  margin: 0 auto;
+  background-color: #e7e7e7;
+}
+.background_v4 {
+  margin: 0 auto;
+  background-color: #ffffff;
+}
 .container {
   width: 80%;
   margin: auto;

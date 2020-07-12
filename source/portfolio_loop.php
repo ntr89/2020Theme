@@ -8,6 +8,7 @@
 
           while($homepageEvents->have_posts()) {
             $homepageEvents->the_post(); ?>
+            <div class="dropback">
             <div class="background_v3">
     <div class="background_v4">
             <section>
@@ -23,6 +24,7 @@
               </div>
            
             </section>
+                </div>
                 </div>
                 </div>
           <?php }

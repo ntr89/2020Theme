@@ -75,6 +75,32 @@ document.title = "PpORTFOLIO";
       "border-bottom-right-radius",
       "40" + "%" + percentageSeen(home_section_v2) * 1.1 + "%"
     );
+
+    home_section_v3.css(
+      "border-top-left-radius",
+      "25" + "%" + percentageSeen(home_section_v3) * 1.1 + "%"
+    );
+    home_section_v3.css(
+      "border-bottom-left-radius",
+      "40" + "%" + percentageSeen(home_section_v3) * 1.1 + "%"
+    );
+    home_section_v4.css(
+      "border-top-left-radius",
+      "60" + "%" + percentageSeen(home_section_v4) * 2 + "%"
+    );
+    home_section_v4.css(
+      "border-bottom-left-radius",
+      "60" + "%" + percentageSeen(home_section_v4) * 1.4 + "%"
+    );
+    if (percentageSeen(home_section_v4) < 50) {
+      home_section_v4.css(
+        "width",
+        100 - percentageSeen(home_section_v4) * 0.4 + "%"
+      );
+    } else {
+      home_section_v4.css("width", "80" + "%");
+    }
+    console.log(percentageSeen(home_section_v4));
     // $myDiv.css("background-size", "100% " + percentageSeen($myDiv) * 4 + "px");
     // $myDiv.height(percentageSeen($myDiv) * 4);
     //$myDiv3.css("border-bottom-right-radius", (((percentageSeen($myDiv3) * (percentageSeen($myDiv3) / 3)) - 600) + "px"));
