@@ -65,7 +65,7 @@ gulp.task("javascript", function (done) {
   return (
     gulp
       // .src("./source/js/**/*.js")
-      .src(["./source/js/alert.js", "./source/js/custom-scripts.js"])
+      .src(filesPath.js)
       .pipe(plumber({ errorHandler: notifier.error }))
       .pipe(
         babel({

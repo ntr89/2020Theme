@@ -1,13 +1,4 @@
 
-<?php 
-          $homepageEvents = new WP_Query(array(
-            'posts_per_page' => 8,
-            'post_type' => 'project',
-            'category_name' => 'front-page'
-          ));
-
-          while($homepageEvents->have_posts()) {
-            $homepageEvents->the_post(); ?>
             <div class="dropback">
             <div class="background_v3">
     <div class="background_v4">
@@ -27,7 +18,5 @@
                 </div>
                 </div>
                 </div>
-          <?php }
-          wp_reset_postdata();
-        ?>
+     
         

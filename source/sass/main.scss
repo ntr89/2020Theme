@@ -23,6 +23,15 @@ section {
 /* section:nth-child(odd) {
    background-color: #dddddd;
 }*/
+
+.ntr-search {
+  position: absolute;
+  top: 60px;
+  right: 200px;
+  font-size: 24px;
+  z-index: 999;
+}
+
 $flow_layers: #777777c0;
 .background_odd {
   background-color: $flow_layers;
@@ -137,6 +146,40 @@ $flow_layers: #777777c0;
   -o-transition: opacity 0.5s ease-out;
   transition: opacity 0.5s ease-out;
 }
+
+.search-overlay {
+  width: 0%;
+  height: 0%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 99998;
+  background-color: #000000;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-out, width 0.01s 0.5s, height 0.01s 0.5s;
+  -moz-transition: opacity 0.5s ease-out, width 0.01s 0.5s, height 0.01s 0.5s;
+  -o-transition: opacity 0.5s ease-out, width 0.01s 0.5s, height 0.01s 0.5s;
+  transition: opacity 0.5s ease-out, width 0.01s 0.5s, height 0.01s 0.5s;
+}
+.search-overlay.active {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.5s ease-out;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+.search-top {
+  margin-top: 100px;
+  position: relative;
+  float: left;
+}
+.search-top i {
+  font-size: 24px;
+  color: #ffffff;
+}
+
 #main_nav li a {
   background-color: #ffffff;
   padding: 10px 30px;

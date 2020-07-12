@@ -16,7 +16,6 @@
     return false;
   });
 })(jQuery);
-document.title = "PpORTFOLIO";
 (function ($) {
   $(".button_for_menu").click(function () {
     $(this).toggleClass("active");
