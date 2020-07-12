@@ -2,23 +2,22 @@
 
 get_header(); ?>
 
-<section>
 <?php echo do_shortcode( '[rev_slider alias="slider-1"][/rev_slider]' ); ?>
-</section>
 
-<section>
-<div class="container container--narrow page-section">
-<?php
-  while(have_posts()) {
-    the_post(); 
-    $content = apply_filters( 'the_content', get_the_content() );
-    echo $content;
- } ?>
-
-
+<div class="background_odd">
+    <div class="background_odd2">
+        <section id="main_home">
+            <div class="container container--narrow page-section">
+            <?php
+            while(have_posts()) {
+                the_post(); 
+                $content = apply_filters( 'the_content', get_the_content() );
+                echo $content;
+            } ?>
+            </div>
+        </section>
+    </div>
 </div>
-
-</section>
 <?php require 'portfolio_loop.php'; ?>
 
 
