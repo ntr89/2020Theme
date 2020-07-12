@@ -23,12 +23,17 @@ section {
 /* section:nth-child(odd) {
    background-color: #dddddd;
 }*/
+$flow_layers: #23232378;
 .background_odd {
-  background-color: red;
+  background-color: $flow_layers;
+  border-bottom-right-radius: 0;
 }
-.background_odd2 {
-  background-color: blue;
+.background_odd2,
+.background_v3,
+.background_v4 {
+  background-color: $flow_layers;
 }
+
 .container {
   width: 80%;
   margin: auto;

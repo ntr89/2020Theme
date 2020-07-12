@@ -8,6 +8,8 @@
 
           while($homepageEvents->have_posts()) {
             $homepageEvents->the_post(); ?>
+            <div class="background_v3">
+    <div class="background_v4">
             <section>
             
               <div class="event-summary__content">
@@ -21,6 +23,8 @@
               </div>
            
             </section>
+                </div>
+                </div>
           <?php }
           wp_reset_postdata();
         ?>

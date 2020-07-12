@@ -49,6 +49,8 @@ document.title = "PpORTFOLIO";
   var face1 = $(".wp-image-4765");
   var home_section = $(".background_odd");
   var home_section_v2 = $(".background_odd2");
+  var home_section_v3 = $(".background_v3");
+  var home_section_v4 = $(".background_v4");
   var $win = $(window);
 
   // old stuff
@@ -67,15 +69,11 @@ document.title = "PpORTFOLIO";
     face1.width(percentageSeen(face1) * 10);
     home_section.css(
       "border-bottom-right-radius",
-      percentageSeen(home_section) * (percentageSeen(home_section) / 3) -
-        600 +
-        "px"
+      "75" + "%" + percentageSeen(home_section_v2) * 0.8 + "%"
     );
     home_section_v2.css(
       "border-bottom-right-radius",
-      percentageSeen(home_section_v2) * (percentageSeen(home_section_v2) / 2) -
-        600 +
-        "px"
+      "40" + "%" + percentageSeen(home_section_v2) * 1.1 + "%"
     );
     // $myDiv.css("background-size", "100% " + percentageSeen($myDiv) * 4 + "px");
     // $myDiv.height(percentageSeen($myDiv) * 4);
