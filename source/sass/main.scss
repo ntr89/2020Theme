@@ -23,7 +23,7 @@ section {
 /* section:nth-child(odd) {
    background-color: #dddddd;
 }*/
-$flow_layers: #2323231c;
+$flow_layers: #777777c0;
 .background_odd {
   background-color: $flow_layers;
   border-bottom-right-radius: 0;
@@ -34,15 +34,14 @@ $flow_layers: #2323231c;
   background-color: $flow_layers;
 }
 .dropback {
-  background-color: #d2d2d2;
 }
 .background_v3 {
-  margin: 0 auto;
-  background-color: #e7e7e7;
+  margin-left: auto;
+  background-color: $flow_layers;
 }
 .background_v4 {
-  margin: 0 auto;
-  background-color: #ffffff;
+  margin-left: auto;
+  background-color: $flow_layers;
 }
 .container {
   width: 80%;
