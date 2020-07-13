@@ -1,19 +1,23 @@
 class Search {
   // describing the search object
   constructor() {
-    this.name = 
+    this.openButton = jQuery(".ntr-search");
+    this.closeButton = jQuery(".search-close");
+    this.searchOverlay = jQuery(".search-overlay");
+    this.events();
   }
 
-  
-// all the search events
-
-
-// methods
+  // all the search events
+  events() {
+    this.openButton.on("click", this.openOverlay.bind(this));
+    this.closeButton.on("click", this.closeOverlay.bind(this));
+  }
+  // methods
   openOverlay() {
-
+    this.searchOverlay.addClass("active");
   }
   closeOverlay() {
-    
+    this.searchOverlay.removeClass("active");
   }
 }
 
