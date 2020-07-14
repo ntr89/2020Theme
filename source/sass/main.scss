@@ -174,12 +174,19 @@ $flow_layers: #777777c0;
   margin-top: 100px;
   position: relative;
   float: left;
+  width: 100%;
 }
 .search-top i {
   font-size: 24px;
   color: #ffffff;
 }
-
+.no_scrolling {
+  overflow: hidden;
+}
+.hider8 {
+  position: relative;
+  float: left;
+}
 #main_nav li a {
   background-color: #ffffff;
   padding: 10px 30px;

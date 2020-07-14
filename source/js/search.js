@@ -4,6 +4,7 @@ class Search {
     this.openButton = jQuery(".ntr-search");
     this.closeButton = jQuery(".search-close");
     this.searchOverlay = jQuery(".search-overlay");
+    this.searchInput = jQuery(".search-term");
     this.events();
   }
 
@@ -11,13 +12,25 @@ class Search {
   events() {
     this.openButton.on("click", this.openOverlay.bind(this));
     this.closeButton.on("click", this.closeOverlay.bind(this));
+    this.searchOverlay.on("click", this.closeOverlay.bind(this));
+    this.searchInput.on("click", this.focusSearch.bind(this));
+    jQuery(document).on("keyup", this.keyPressDispatcher.bind(this));
   }
   // methods
+  keyPressDispatcher(e) {
+    console.log(e.keyCode);
+  }
   openOverlay() {
     this.searchOverlay.addClass("active");
+    jQuery("body").addClass("no_scrolling");
   }
   closeOverlay() {
     this.searchOverlay.removeClass("active");
+    jQuery("body").removeClass("no_scrolling");
+  }
+  focusSearch(e) {
+    e.stopPropagation();
+    console.log("yep");
   }
 }
 
