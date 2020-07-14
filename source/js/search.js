@@ -6,6 +6,7 @@ class Search {
     this.searchOverlay = jQuery(".search-overlay");
     this.searchInput = jQuery(".search-term");
     this.events();
+    this.overlayActive = false;
   }
 
   // all the search events
@@ -14,19 +15,28 @@ class Search {
     this.closeButton.on("click", this.closeOverlay.bind(this));
     this.searchOverlay.on("click", this.closeOverlay.bind(this));
     this.searchInput.on("click", this.focusSearch.bind(this));
-    jQuery(document).on("keyup", this.keyPressDispatcher.bind(this));
+    jQuery(document).on("keydown", this.keyPressDispatcher.bind(this));
   }
   // methods
   keyPressDispatcher(e) {
-    console.log(e.keyCode);
+    // console.log(e.keyCode);
+
+    if (e.keyCode == 83 && !this.overlayActive) {
+      this.openOverlay();
+    }
+    if (e.keyCode == 27 && this.overlayActive) {
+      this.closeOverlay();
+    }
   }
   openOverlay() {
     this.searchOverlay.addClass("active");
     jQuery("body").addClass("no_scrolling");
+    this.overlayActive = true;
   }
   closeOverlay() {
     this.searchOverlay.removeClass("active");
     jQuery("body").removeClass("no_scrolling");
+    this.overlayActive = false;
   }
   focusSearch(e) {
     e.stopPropagation();
