@@ -16,8 +16,15 @@ class Search {
     this.searchOverlay.on("click", this.closeOverlay.bind(this));
     this.searchInput.on("click", this.focusSearch.bind(this));
     jQuery(document).on("keydown", this.keyPressDispatcher.bind(this));
+    this.searchInput.on("keydown", this.typingLogic.bind(this));
   }
   // methods
+  typingLogic() {
+    setTimeout(function () {
+      console.log("delay test");
+    }, 2000);
+  }
+
   keyPressDispatcher(e) {
     // console.log(e.keyCode);
 
