@@ -7,6 +7,7 @@ class Search {
     this.searchInput = jQuery(".search-term");
     this.events();
     this.overlayActive = false;
+    this.typingTimer;
   }
 
   // all the search events
@@ -20,7 +21,8 @@ class Search {
   }
   // methods
   typingLogic() {
-    setTimeout(function () {
+    clearTimeout(this.typingTimer);
+    this.typingTimer = setTimeout(function () {
       console.log("delay test");
     }, 2000);
   }
