@@ -42,9 +42,14 @@ class Search {
   }
 
   getResults() {
-    this.searchResults.html("testing");
-    this.spinnerVisible = false;
-    console.log("wooo");
+    jQuery.getJSON(
+      "http://localhost:3000/wp-json/wp/v2/project?search=" +
+        this.searchInput.val(),
+      function (data) {
+        alert(data[0].title.rendered);
+      }
+    );
+    // this.spinnerVisible = false;
   }
 
   keyPressDispatcher(e) {
