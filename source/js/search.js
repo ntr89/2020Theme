@@ -1,6 +1,7 @@
 class Search {
   // describing the search object
   constructor() {
+    this.searchResults = jQuery("#search-results");
     this.openButton = jQuery(".ntr-search");
     this.closeButton = jQuery(".search-close");
     this.searchOverlay = jQuery(".search-overlay");
@@ -22,9 +23,13 @@ class Search {
   // methods
   typingLogic() {
     clearTimeout(this.typingTimer);
-    this.typingTimer = setTimeout(function () {
-      console.log("delay test");
-    }, 2000);
+    this.searchResults.html('<div class="spinner"></div>');
+    this.typingTimer = setTimeout(this.getResults.bind(this), 2000);
+  }
+
+  getResults() {
+    this.searchResults.html("testing");
+    console.log("wooo");
   }
 
   keyPressDispatcher(e) {
