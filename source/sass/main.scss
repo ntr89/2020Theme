@@ -32,26 +32,6 @@ section {
   z-index: 999;
 }
 
-$flow_layers: #777777c0;
-.background_odd {
-  background-color: $flow_layers;
-  border-bottom-right-radius: 0;
-}
-.background_odd2,
-.background_v3,
-.background_v4 {
-  background-color: $flow_layers;
-}
-.dropback {
-}
-.background_v3 {
-  margin-left: auto;
-  background-color: $flow_layers;
-}
-.background_v4 {
-  margin-left: auto;
-  background-color: $flow_layers;
-}
 .container {
   width: 80%;
   margin: auto;
