@@ -43,24 +43,24 @@ class Search {
 
   getResults() {
     jQuery.getJSON(
-      "http://localhost:3000/wp-json/wp/v2/project?search=" +
+      localSite.root_url +
+        "/wp-json/wp/v2/project?search=" +
         this.searchInput.val(),
       (data) => {
         this.searchResults.html(`
         <h2>General Info<h2>
-        <ul>
+        ${data.length ? "<ul>" : "<p>No results found</p>"}
         ${data
           .map(
             (item) =>
               `<li><a href="${item.link}">${item.title.rendered}</a></li>`
           )
           .join("")}
-        
-        </ul>
+          ${data.length ? "</ul>" : ""}
         `);
+        this.spinnerVisible = false;
       }
     );
-    // this.spinnerVisible = false;
   }
 
   keyPressDispatcher(e) {
