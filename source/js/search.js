@@ -45,8 +45,19 @@ class Search {
     jQuery.getJSON(
       "http://localhost:3000/wp-json/wp/v2/project?search=" +
         this.searchInput.val(),
-      function (data) {
-        alert(data[0].title.rendered);
+      (data) => {
+        this.searchResults.html(`
+        <h2>General Info<h2>
+        <ul>
+        ${data
+          .map(
+            (item) =>
+              `<li><a href="${item.link}">${item.title.rendered}</a></li>`
+          )
+          .join("")}
+        
+        </ul>
+        `);
       }
     );
     // this.spinnerVisible = false;
