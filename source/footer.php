@@ -5,19 +5,7 @@
      
     </div>
   </footer>
-<div class="search-overlay">
-  <div class="search-top">
-              <div class="container">
-                <i class="fa fa-search search-icon" aria-hidden="true"></i>
-                <input type="text" class="search-term" placeholder="What are you looking for?" id="search-term">
-                <i class="fa fa-window-close search-close" aria-hidden="true"></i>
-              </div>
-              <div class="container">
-                <div id="search-results">
-                </div>
-              </div>
-  </div>
-</div>
+
 
 <div class="overlayer_menu"></div>
 <div id="main_nav" class="main_nav"><?php

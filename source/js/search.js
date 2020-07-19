@@ -1,6 +1,7 @@
 class Search {
   // describing the search object
   constructor() {
+    this.addSeachTemplate();
     this.searchResults = jQuery("#search-results");
     this.openButton = jQuery(".ntr-search");
     this.closeButton = jQuery(".search-close");
@@ -32,7 +33,7 @@ class Search {
           this.searchResults.html('<div class="spinner"></div>');
           this.spinnerVisible = true;
         }
-        this.typingTimer = setTimeout(this.getResults.bind(this), 2000);
+        this.typingTimer = setTimeout(this.getResults.bind(this), 750);
       } else {
         this.searchResults.html("");
         this.spinnerVisible = false;
@@ -80,6 +81,8 @@ class Search {
   openOverlay() {
     this.searchOverlay.addClass("active");
     jQuery("body").addClass("no_scrolling");
+    this.searchInput.val("");
+    setTimeout(() => this.searchInput.focus(), 301);
     this.overlayActive = true;
   }
   closeOverlay() {
@@ -90,6 +93,23 @@ class Search {
   focusSearch(e) {
     e.stopPropagation();
     console.log("yep");
+  }
+  addSeachTemplate() {
+    jQuery("body").append(`
+    <div class="search-overlay">
+  <div class="search-top">
+              <div class="container">
+                <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                <input type="text" class="search-term" placeholder="What are you looking for?" id="search-term">
+                <i class="fa fa-window-close search-close" aria-hidden="true"></i>
+              </div>
+              <div class="container">
+                <div id="search-results">
+                </div>
+              </div>
+  </div>
+</div>
+    `);
   }
 }
 
