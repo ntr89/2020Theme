@@ -48,18 +48,26 @@ class Search {
         "/wp-json/wp/v2/project?search=" +
         this.searchInput.val(),
       (data) => {
-        this.searchResults.html(`
+        jQuery.getJSON(
+          localSite.root_url +
+            "/wp-json/wp/v2/pages?search=" +
+            this.searchInput.val(),
+          (pages) => {
+            var combineResults = data.concat(pages);
+            this.searchResults.html(`
         <h2>General Info<h2>
-        ${data.length ? "<ul>" : "<p>No results found</p>"}
-        ${data
+        ${combineResults.length ? "<ul>" : "<p>No results found</p>"}
+        ${combineResults
           .map(
             (item) =>
               `<li><a href="${item.link}">${item.title.rendered}</a></li>`
           )
           .join("")}
-          ${data.length ? "</ul>" : ""}
+          ${combineResults.length ? "</ul>" : ""}
         `);
-        this.spinnerVisible = false;
+            this.spinnerVisible = false;
+          }
+        );
       }
     );
   }
