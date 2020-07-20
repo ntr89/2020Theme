@@ -484,12 +484,6 @@ div.wpcf7-mail-sent-ok {
   background-image: url("http://www.potapov.io/wp-content/uploads/2019/10/round-bg-shaded2.png") !important;
   background-position: bottom;
 }
-#myface span {
-  opacity: 0;
-}
-#myface2 span {
-  opacity: 0;
-}
 
 .websitelink {
   background-color: #ffffff;
@@ -502,6 +496,9 @@ div.wpcf7-mail-sent-ok {
   background-color: #ffffff;
 }
 
+.wp-image-4765 {
+  transition: all 0.3s ease-out;
+}
 /* NEW MENU BUTTON */
 
 .button_for_menu {
