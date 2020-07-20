@@ -1,11 +1,21 @@
 <?php
 
+function ntr_custom_rest() {
+    register_rest_field('project', 'acf_field_name', array(
+'get_callback' => function() {
+    return 'ACF_FIeld';
+}
+    ));
+}
+
+add_action('rest_api_init', 'ntr_custom_rest');
+
 function portfolio_stuff() {
     wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
     wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     
     
-      wp_enqueue_script('custom-scripts', get_theme_file_uri('/js/scripts.min.js'), NULL, '1.0', true);
+      wp_enqueue_script('custom-scripts', get_theme_file_uri('/js/scripts.min.js'), array('jquery'), '1.0', true);
       wp_enqueue_style('main-styles', get_theme_file_uri('/css/main.min.css'));
       wp_localize_script('custom-scripts', 'localSite', array(
           'root_url' => get_site_url()

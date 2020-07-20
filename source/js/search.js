@@ -1,62 +1,61 @@
-class Search {
-  // describing the search object
-  constructor() {
-    this.addSeachTemplate();
-    this.searchResults = jQuery("#search-results");
-    this.openButton = jQuery(".ntr-search");
-    this.closeButton = jQuery(".search-close");
-    this.searchOverlay = jQuery(".search-overlay");
-    this.searchInput = jQuery(".search-term");
-    this.events();
-    this.overlayActive = false;
-    this.typingTimer;
-    this.spinnerVisible = false;
-    this.lastValue;
-  }
-
-  // all the search events
-  events() {
-    this.openButton.on("click", this.openOverlay.bind(this));
-    this.closeButton.on("click", this.closeOverlay.bind(this));
-    this.searchOverlay.on("click", this.closeOverlay.bind(this));
-    this.searchInput.on("click", this.focusSearch.bind(this));
-    jQuery(document).on("keydown", this.keyPressDispatcher.bind(this));
-    this.searchInput.on("keyup", this.typingLogic.bind(this));
-  }
-  // methods
-  typingLogic() {
-    if (this.searchInput.val() != this.lastValue) {
-      clearTimeout(this.typingTimer);
-
-      if (this.searchInput.val()) {
-        if (!this.spinnerVisible) {
-          this.searchResults.html('<div class="spinner"></div>');
-          this.spinnerVisible = true;
-        }
-        this.typingTimer = setTimeout(this.getResults.bind(this), 750);
-      } else {
-        this.searchResults.html("");
-        this.spinnerVisible = false;
-      }
+(function ($) {
+  class Search {
+    // describing the search object
+    constructor() {
+      this.addSeachTemplate();
+      this.searchResults = $("#search-results");
+      this.openButton = $(".ntr-search");
+      this.closeButton = $(".search-close");
+      this.searchOverlay = $(".search-overlay");
+      this.searchInput = $(".search-term");
+      this.events();
+      this.overlayActive = false;
+      this.typingTimer;
+      this.spinnerVisible = false;
+      this.lastValue;
     }
-    this.lastValue = this.searchInput.val();
-  }
 
-  getResults() {
-    jQuery
-      .when(
-        jQuery.getJSON(
+    // all the search events
+    events() {
+      this.openButton.on("click", this.openOverlay.bind(this));
+      this.closeButton.on("click", this.closeOverlay.bind(this));
+      this.searchOverlay.on("click", this.closeOverlay.bind(this));
+      this.searchInput.on("click", this.focusSearch.bind(this));
+      $(document).on("keydown", this.keyPressDispatcher.bind(this));
+      this.searchInput.on("keyup", this.typingLogic.bind(this));
+    }
+    // methods
+    typingLogic() {
+      if (this.searchInput.val() != this.lastValue) {
+        clearTimeout(this.typingTimer);
+
+        if (this.searchInput.val()) {
+          if (!this.spinnerVisible) {
+            this.searchResults.html('<div class="spinner"></div>');
+            this.spinnerVisible = true;
+          }
+          this.typingTimer = setTimeout(this.getResults.bind(this), 750);
+        } else {
+          this.searchResults.html("");
+          this.spinnerVisible = false;
+        }
+      }
+      this.lastValue = this.searchInput.val();
+    }
+
+    getResults() {
+      $.when(
+        $.getJSON(
           localSite.root_url +
             "/wp-json/wp/v2/project?search=" +
             this.searchInput.val()
         ),
-        jQuery.getJSON(
+        $.getJSON(
           localSite.root_url +
             "/wp-json/wp/v2/pages?search=" +
             this.searchInput.val()
         )
-      )
-      .then(
+      ).then(
         (data, pages) => {
           var combineResults = data[0].concat(pages[0]);
           this.searchResults.html(`
@@ -73,40 +72,40 @@ class Search {
           this.searchResults.html("<p>Unexpected Error, please try again</p>");
         }
       );
-  }
-
-  keyPressDispatcher(e) {
-    // console.log(e.keyCode);
-
-    if (
-      e.keyCode == 83 &&
-      !this.overlayActive &&
-      jQuery("input, textarea").is(":focus")
-    ) {
-      this.openOverlay();
     }
-    if (e.keyCode == 27 && this.overlayActive) {
-      this.closeOverlay();
+
+    keyPressDispatcher(e) {
+      // console.log(e.keyCode);
+
+      if (
+        e.keyCode == 83 &&
+        !this.overlayActive &&
+        $("input, textarea").is(":focus")
+      ) {
+        this.openOverlay();
+      }
+      if (e.keyCode == 27 && this.overlayActive) {
+        this.closeOverlay();
+      }
     }
-  }
-  openOverlay() {
-    this.searchOverlay.addClass("active");
-    jQuery("body").addClass("no_scrolling");
-    this.searchInput.val("");
-    setTimeout(() => this.searchInput.focus(), 301);
-    this.overlayActive = true;
-  }
-  closeOverlay() {
-    this.searchOverlay.removeClass("active");
-    jQuery("body").removeClass("no_scrolling");
-    this.overlayActive = false;
-  }
-  focusSearch(e) {
-    e.stopPropagation();
-    console.log("yep");
-  }
-  addSeachTemplate() {
-    jQuery("body").append(`
+    openOverlay() {
+      this.searchOverlay.addClass("active");
+      $("body").addClass("no_scrolling");
+      this.searchInput.val("");
+      setTimeout(() => this.searchInput.focus(), 301);
+      this.overlayActive = true;
+    }
+    closeOverlay() {
+      this.searchOverlay.removeClass("active");
+      $("body").removeClass("no_scrolling");
+      this.overlayActive = false;
+    }
+    focusSearch(e) {
+      e.stopPropagation();
+      console.log("yep");
+    }
+    addSeachTemplate() {
+      $("body").append(`
     <div class="search-overlay">
   <div class="search-top">
               <div class="container">
@@ -121,12 +120,12 @@ class Search {
   </div>
 </div>
     `);
+    }
   }
-}
 
-const search = new Search();
+  const search = new Search();
 
-/* OLD SOLUTION
+  /* OLD SOLUTION
 (function ($) {
   $(".ntr-search").click(function () {
     $(this).toggleClass("active");
@@ -141,3 +140,4 @@ const search = new Search();
   });
 })(jQuery);
 */
+})(jQuery);
