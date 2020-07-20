@@ -56,9 +56,10 @@ class Search {
             this.searchInput.val()
         )
       )
-      .then((data, pages) => {
-        var combineResults = data[0].concat(pages[0]);
-        this.searchResults.html(`
+      .then(
+        (data, pages) => {
+          var combineResults = data[0].concat(pages[0]);
+          this.searchResults.html(`
   <h2>General Info<h2>
   ${combineResults.length ? "<ul>" : "<p>No results found</p>"}
   ${combineResults
@@ -66,8 +67,12 @@ class Search {
     .join("")}
     ${combineResults.length ? "</ul>" : ""}
   `);
-        this.spinnerVisible = false;
-      });
+          this.spinnerVisible = false;
+        },
+        () => {
+          this.searchResults.html("<p>Unexpected Error, please try again</p>");
+        }
+      );
   }
 
   keyPressDispatcher(e) {
