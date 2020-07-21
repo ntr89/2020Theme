@@ -1,5 +1,5 @@
 <?php
-// require get_theme_file_path('inc/search-route.php');
+require get_theme_file_path('inc/search-route.php');
 function ntr_custom_rest() {
     register_rest_field('project', 'acf_field_name', array(
 'get_callback' => function() {
