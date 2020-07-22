@@ -7,6 +7,16 @@ function siteSearch() {
     ));
 }
 function ntrSearchResults() {
-    return 'Route test';
+   $projects = new WP_Query(array(
+       'post_type' => 'project'
+   ));
+$projResults = array();
+while($projects->have_posts()) {
+array_push($projResults, array(
+    'title' => get_the_title(),
+    'permalink' => get_the_permalink()
+));
+}
+return $projResults;
 };
 
