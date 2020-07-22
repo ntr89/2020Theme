@@ -569,6 +569,13 @@ div.wpcf7-mail-sent-ok {
 
 /* end new menu button */
 
+#menu-new-main-nav li {
+  position: relative;
+  float: left;
+  width: 100%;
+  display: block;
+}
+
 @media only screen and (max-width: 1200px) {
 }
 @media only screen and (max-width: 980px) {
