@@ -1,3 +1,23 @@
+/* add span to menu */
+(function ($) {
+  $(".button_for_menu").click(function () {
+    $(this).toggleClass("active");
+    $(".main_nav").toggleClass("active");
+    $(".overlayer_menu").toggleClass("active");
+  });
+  $(".button_for_menu").one("click", function () {
+    $(".menu-item > a").append("<span></span>");
+    $(".menu-item > a").addClass("btn-6");
+  });
+
+  $(".overlayer_menu").click(function () {
+    $(this).toggleClass("active");
+    $(".main_nav").toggleClass("active");
+    $(".button_for_menu").toggleClass("active");
+  });
+})(jQuery);
+
+/* menu span end */
 (function ($) {
   $(".btn-6")
     .on("mouseenter", function (e) {
@@ -14,22 +34,6 @@
     });
   $("[href=#]").click(function () {
     return false;
-  });
-})(jQuery);
-(function ($) {
-  $(".button_for_menu").click(function () {
-    $(this).toggleClass("active");
-    $(".main_nav").toggleClass("active");
-    $(".overlayer_menu").toggleClass("active");
-  });
-  $(".button_for_menu").one("click", function () {
-    $(".supermenubutton").append("<span></span>");
-  });
-
-  $(".overlayer_menu").click(function () {
-    $(this).toggleClass("active");
-    $(".main_nav").toggleClass("active");
-    $(".button_for_menu").toggleClass("active");
   });
 })(jQuery);
 
