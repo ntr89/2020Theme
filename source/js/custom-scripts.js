@@ -5,10 +5,9 @@
     $(".main_nav").toggleClass("active");
     $(".overlayer_menu").toggleClass("active");
   });
-  $(".button_for_menu").one("click", function () {
-    $(".menu-item > a").append("<span></span>");
-    $(".menu-item > a").addClass("btn-6");
-  });
+
+  $(".menu-item > a").append("<span></span>");
+  $(".menu-item > a").addClass("btn-6");
 
   $(".overlayer_menu").click(function () {
     $(this).toggleClass("active");
