@@ -4,8 +4,20 @@ html {
 body {
   overflow-x: hidden;
   margin: 0;
+  font-size: 18px;
 }
-
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Roboto;
+}
+a {
+  text-decoration: none;
+}
 section {
   height: 100vh;
   scroll-snap-align: center;
@@ -493,10 +505,48 @@ div.wpcf7-mail-sent-ok {
   transition: all 0.8s ease-out 0s;
   right: -200px;
   position: relative;
+  border-radius: 300px;
 }
 .fp-table.active .wp-image-4765 {
   transition: all 0.8s ease-out 0.5s;
   right: 00px;
+  opacity: 1;
+}
+.left_home_ntr {
+  padding: 0 100px;
+}
+
+.left_home_ntr h2 {
+  opacity: 0;
+  transition: all 0.8s ease-out 0s;
+  left: -60px;
+  position: relative;
+}
+.fp-table.active .left_home_ntr h2 {
+  transition: all 0.8s ease-out 0.2s;
+  left: 0px;
+  opacity: 1;
+}
+.left_home_ntr h3 {
+  opacity: 0;
+  transition: all 0.8s ease-out 0s;
+  left: -30px;
+  position: relative;
+}
+.fp-table.active .left_home_ntr h3 {
+  transition: all 0.8s ease-out 0.7s;
+  left: 0px;
+  opacity: 1;
+}
+.left_home_ntr p {
+  opacity: 0;
+  transition: all 0.8s ease-out 0s;
+  top: 10px;
+  position: relative;
+}
+.fp-table.active .left_home_ntr p {
+  transition: all 0.8s ease-out 1.2s;
+  top: 0px;
   opacity: 1;
 }
 /* NEW MENU BUTTON */
@@ -715,7 +765,6 @@ div.wpcf7-mail-sent-ok {
 .wp-block-columns {
   margin-bottom: 0 !important;
 }
-
 @media only screen and (max-width: 1200px) {
 }
 @media only screen and (max-width: 980px) {
