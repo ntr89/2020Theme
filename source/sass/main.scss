@@ -578,6 +578,9 @@ div.wpcf7-mail-sent-ok {
   width: 100%;
   height: auto;
 }
+section:nth-child(odd) .project_summary {
+  transform: translate(100px, -40px);
+}
 .fp-table.active .project_summary {
   transition: all 0.5s ease-out 0.2s;
   transform: translate(1px, -40px);
