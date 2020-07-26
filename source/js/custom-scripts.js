@@ -190,6 +190,8 @@
       "thirdSection",
       "fourthSection",
       "fifthSection",
+      "sixthSection",
+      "seventhSection",
     ],
     menu: "#menu",
 

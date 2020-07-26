@@ -164,6 +164,16 @@ section {
   font-size: 24px;
   color: #ffffff;
 }
+.search-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.search-top input[type="text"] {
+  width: calc(100% - 30px);
+  margin-top: 20px;
+}
 #search-results {
   margin-top: 40px;
   color: #ffffff;
