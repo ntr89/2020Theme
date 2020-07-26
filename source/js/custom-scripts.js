@@ -45,7 +45,7 @@
     }
   });
 })(jQuery);
-/* detect if in viewport */
+/* detect if in viewport  OLD CODE FOR ANIMATION
 (function ($) {
   //new stuff
   var face1 = $(".wp-image-4765");
@@ -128,30 +128,31 @@
     //   $sec2.css("border-bottom-left-radius", ((percentageSeen($sec2) - 20) + "%"));
     //   $sec2.css("border-bottom-right-radius", (((percentageSeen($sec2) * 3) - 110) + "%" + (percentageSeen($sec2) * 2) + "%"));
     //   */
-    // // desktop animation
-    // if (percentageSeen($sys_d) > 20) {
-    //   $sys_d.addClass("radiate");
-    // } else if (percentageSeen($sys_d) <= 20) {
-    //   $sys_d.removeClass("radiate");
-    // }
-    // //laptop animation
-    // if (percentageSeen($sys_l) > 30) {
-    //   $sys_l.addClass("elaborate");
-    // } else if (percentageSeen($sys_l) <= 30) {
-    //   $sys_l.removeClass("elaborate");
-    // }
-    // //tablet animation
-    // if (percentageSeen($sys_t) > 40) {
-    //   $sys_t.addClass("aggrevate");
-    // } else if (percentageSeen($sys_t) <= 40) {
-    //   $sys_t.removeClass("aggrevate");
-    // }
-    // //mobile animation
-    // if (percentageSeen($sys_m) > 40) {
-    //   $sys_m.addClass("anticipate");
-    // } else if (percentageSeen($sys_m) <= 40) {
-    //   $sys_m.removeClass("anticipate");
-    // }
+// // desktop animation
+// if (percentageSeen($sys_d) > 20) {
+//   $sys_d.addClass("radiate");
+// } else if (percentageSeen($sys_d) <= 20) {
+//   $sys_d.removeClass("radiate");
+// }
+// //laptop animation
+// if (percentageSeen($sys_l) > 30) {
+//   $sys_l.addClass("elaborate");
+// } else if (percentageSeen($sys_l) <= 30) {
+//   $sys_l.removeClass("elaborate");
+// }
+// //tablet animation
+// if (percentageSeen($sys_t) > 40) {
+//   $sys_t.addClass("aggrevate");
+// } else if (percentageSeen($sys_t) <= 40) {
+//   $sys_t.removeClass("aggrevate");
+// }
+// //mobile animation
+// if (percentageSeen($sys_m) > 40) {
+//   $sys_m.addClass("anticipate");
+// } else if (percentageSeen($sys_m) <= 40) {
+//   $sys_m.removeClass("anticipate");
+// }
+/*
   });
   // the master func
   function percentageSeen(el) {
@@ -175,11 +176,10 @@
 
   $win.trigger("resize scroll");
 })(jQuery);
-
+ END OLD CODE FOR ANIMATION    */
 (function ($) {
   var $header_top = $(".header");
   $("#fullpage").fullpage({
-    sectionsColor: ["#3dcfa1", "#348899", "#ff8b20", "#ff5757", "#ffd03c"],
     sectionSelector: ".vertical-scrolling",
     navigation: true,
     slidesNavigation: true,
