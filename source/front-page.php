@@ -6,8 +6,6 @@ get_header(); ?>
 <?php echo do_shortcode( '[rev_slider alias="slider-1"][/rev_slider]' ); ?>
 </section>
 <section class="vertical-scrolling">
-<div class="background_odd">
-    <div class="background_odd2">
         
             <div class="container container--narrow page-section">
             <?php
@@ -18,8 +16,6 @@ get_header(); ?>
             } ?>
             </div>
         
-    </div>
-</div>
 </section>
 <?php 
           $homepageEvents = new WP_Query(array(

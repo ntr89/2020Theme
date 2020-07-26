@@ -1,11 +1,11 @@
 <?php
 
-get_header(); ?> <div id="fullpage"><section class="vertical-scrolling"> <?php echo do_shortcode( '[rev_slider alias="slider-1"][/rev_slider]' ); ?> </section><section class="vertical-scrolling"><div class="background_odd"><div class="background_odd2"><div class="container container--narrow page-section"> <?php
+get_header(); ?> <div id="fullpage"><section class="vertical-scrolling"> <?php echo do_shortcode( '[rev_slider alias="slider-1"][/rev_slider]' ); ?> </section><section class="vertical-scrolling"><div class="container container--narrow page-section"> <?php
             while(have_posts()) {
                 the_post(); 
                 $content = get_the_content();
                 echo $content;
-            } ?> </div></div></div></section> <?php 
+            } ?> </div></section> <?php 
           $homepageEvents = new WP_Query(array(
             'posts_per_page' => 8,
             'post_type' => 'project',

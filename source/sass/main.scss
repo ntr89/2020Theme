@@ -488,8 +488,16 @@ div.wpcf7-mail-sent-ok {
   background-color: #ffffff;
 }
 
-.wp-image-4765 {
-  transition: all 0.3s ease-out;
+.fp-table .wp-image-4765 {
+  opacity: 0;
+  transition: all 0.8s ease-out 0s;
+  right: -200px;
+  position: relative;
+}
+.fp-table.active .wp-image-4765 {
+  transition: all 0.8s ease-out 0.5s;
+  right: 00px;
+  opacity: 1;
 }
 /* NEW MENU BUTTON */
 
@@ -700,6 +708,13 @@ div.wpcf7-mail-sent-ok {
   left: 20px;
 }
 // END ANCHOR BUTTONS
+
+.fp-tableCell {
+  display: flex;
+}
+.wp-block-columns {
+  margin-bottom: 0 !important;
+}
 
 @media only screen and (max-width: 1200px) {
 }
