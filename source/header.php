@@ -17,11 +17,13 @@
 							</a>
 						</div>
 			<!--<div class="btn-6"><span></span><a href="#" class="burger-menu"><span>Menu</span></a></div> -->
-				<a href="#" class="button_for_menu btn-6 supershadow">
+			<div class="header_button">	
+				<i class="fa fa-search ntr-search" aria-hidden="true"></i>
+			<a href="#" class="button_for_menu btn-6 supershadow">
 					<div class="hider8">Menu</div>
 					<div class="line_z"></div>
 					<span></span>
 				</a>
+</div>
 				
-<i class="fa fa-search ntr-search" aria-hidden="true"></i>
 </header>

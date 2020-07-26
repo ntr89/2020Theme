@@ -24,14 +24,6 @@ section {
    background-color: #dddddd;
 }*/
 
-.ntr-search {
-  position: absolute;
-  top: 60px;
-  right: 200px;
-  font-size: 24px;
-  z-index: 999;
-}
-
 .container {
   width: 80%;
   margin: auto;
@@ -501,17 +493,36 @@ div.wpcf7-mail-sent-ok {
 }
 /* NEW MENU BUTTON */
 
+.header_button {
+  background: #cccccc;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 99998;
+  border-radius: 100px;
+  height: 80px;
+}
+.ntr-search {
+  position: relative;
+  float: left;
+  line-height: 80px;
+  font-size: 20px;
+  padding: 0 10px;
+  z-index: 999;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.71, 1.54);
+  cursor: pointer;
+}
+.ntr-search:hover {
+  padding: 0 24px 0 30px;
+  font-size: 24px;
+}
 .button_for_menu {
   display: inline-block;
   width: 167px;
   height: 80px;
   cursor: pointer;
   text-decoration: none;
-  position: fixed;
   text-transform: uppercase;
-  top: 10px;
-  right: 10px;
-  z-index: 99998;
   background-color: #ffffff;
   padding: 30px 30px;
   border-radius: 100px;
@@ -566,7 +577,6 @@ div.wpcf7-mail-sent-ok {
   color: #ffffff;
   background: #ffffff;
 }
-
 /* end new menu button */
 #menu-new-main-nav {
   margin-top: 0;
