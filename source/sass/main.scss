@@ -561,7 +561,13 @@ div.wpcf7-mail-sent-ok {
 }
 // Porfolio Animation
 .project_summary {
+  width: 100%;
+  margin: auto;
+  position: relative;
   display: flex;
+}
+.project_summary .main_image {
+  flex-basis: 30%;
 }
 
 /* NEW MENU BUTTON */
@@ -776,6 +782,7 @@ div.wpcf7-mail-sent-ok {
 
 .fp-tableCell {
   display: flex;
+  width: 100%;
 }
 .wp-block-columns {
   margin-bottom: 0 !important;
