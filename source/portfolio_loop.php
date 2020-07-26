@@ -1,6 +1,6 @@
 
          
-            <section>
+          <section class="vertical-scrolling">
             
               <div class="event-summary__content">
                 <?php  the_post_thumbnail( 'full' ); ?>

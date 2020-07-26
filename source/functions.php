@@ -15,7 +15,6 @@ function portfolio_stuff() {
     wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     
       wp_enqueue_script('custom-scripts', get_theme_file_uri('/js/scripts.min.js'), array('jquery'), '1.0', true);
-      wp_enqueue_script('custom-scripts', get_theme_file_uri('//cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js'), array('jquery'), '1.0', true);
       wp_enqueue_style('main-styles', get_theme_file_uri('/css/main.min.css'));
       wp_localize_script('custom-scripts', 'localSite', array(
           'root_url' => get_site_url()

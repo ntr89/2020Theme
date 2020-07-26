@@ -1,12 +1,14 @@
 <?php
 
 get_header(); ?>
-
+<div id="fullpage">
+  <section class="vertical-scrolling">
 <?php echo do_shortcode( '[rev_slider alias="slider-1"][/rev_slider]' ); ?>
-
+</section>
+<section class="vertical-scrolling">
 <div class="background_odd">
     <div class="background_odd2">
-        <section id="main_home">
+        
             <div class="container container--narrow page-section">
             <?php
             while(have_posts()) {
@@ -15,10 +17,10 @@ get_header(); ?>
                 echo $content;
             } ?>
             </div>
-        </section>
+        
     </div>
 </div>
-
+</section>
 <?php 
           $homepageEvents = new WP_Query(array(
             'posts_per_page' => 8,
@@ -34,6 +36,7 @@ get_header(); ?>
          ?>
 
  
+</div>
 
 <?php get_footer();
 
