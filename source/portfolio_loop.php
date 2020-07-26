@@ -2,6 +2,7 @@
          
           <section class="vertical-scrolling">
           <div class="container">
+           
               <div class="project_summary" style="background-color:<?php  the_field( 'project_color' ); ?>">
                 <div class="main_image">
                 <?php  the_post_thumbnail( 'full' ); ?>
@@ -17,5 +18,6 @@
               </div>
               </div>
             </section>
+            
      
         

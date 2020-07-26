@@ -566,15 +566,20 @@ div.wpcf7-mail-sent-ok {
   position: relative;
   display: flex;
   transition: all 0.5s ease-out 0s;
-  transform: translateX(-100px);
+  transform: translate(-100px, -40px);
   opacity: 0;
 }
 .project_summary .main_image {
   flex-basis: 30%;
 }
+.project_summary .main_image img {
+  padding: 60px;
+  width: 100%;
+  height: auto;
+}
 .fp-table.active .project_summary {
   transition: all 0.5s ease-out 0.2s;
-  transform: translateX(0px);
+  transform: translate(1px, -40px);
   opacity: 1;
 }
 /* NEW MENU BUTTON */

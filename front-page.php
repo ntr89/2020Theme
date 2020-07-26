@@ -14,7 +14,7 @@ get_header(); ?> <div id="fullpage"><section class="vertical-scrolling"> <?php e
 
           while($homepageEvents->have_posts()) {
             $homepageEvents->the_post(); ?> <?php get_template_part('portfolio_loop'); ?> <?php }
-         
+       wp_reset_postdata();  
          ?> </div> <?php get_footer();
 
 ?>

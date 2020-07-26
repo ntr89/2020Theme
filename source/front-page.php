@@ -28,7 +28,7 @@ get_header(); ?>
             $homepageEvents->the_post(); ?>
 <?php get_template_part('portfolio_loop'); ?>
 <?php }
-         
+       wp_reset_postdata();  
          ?>
 
  
