@@ -15,9 +15,13 @@ h4,
 h5,
 h6 {
   font-family: Roboto;
+  margin-top: 0;
 }
 a {
   text-decoration: none;
+}
+.wp-block-image .aligncenter {
+  margin: 0;
 }
 section {
   height: 100vh;
@@ -584,21 +588,30 @@ section:nth-child(odd) .project_summary {
 }
 .fp-table.active .project_summary {
   transition: all 0.5s ease-out 0.2s;
-  transform: translate(1px, -40px);
+  transform: rotateX(-5deg) rotateY(8deg) rotate(0deg) translate(1px, -40px);
   opacity: 1;
+  border-radius: 50px;
 }
 .project_summary .description {
   background-color: #fff;
   transform: rotate3d(0.5, 0.6, 0.2, 25deg) translateX(360px);
   opacity: 0;
-  padding: 20px;
+  padding: 40px;
   flex-basis: 55%;
   transition: all 0.5s ease-out 0s;
+  border-radius: 40px;
 }
 .fp-table.active .project_summary .description {
-  transform: rotateX(11deg) rotateY(8deg) rotate(0deg) translateX(200px);
+  transform: rotateX(15deg) rotateY(8deg) rotate(0deg) translateX(200px);
   opacity: 1;
   transition: all 0.5s ease-out 0.8s;
+}
+.project_summary button {
+  padding: 30px;
+  border-radius: 100px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
 }
 /* NEW MENU BUTTON */
 

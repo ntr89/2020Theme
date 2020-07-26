@@ -1,6 +1,6 @@
-<section class="vertical-scrolling">
+<section class="vertical-scrolling" style="background-image:url('<?php  the_field( 'background_image' ); ?>');">
   <div class="container">
-    <a href="<?php the_permalink(); ?>" class="project_summary" style="background-color:<?php  the_field( 'project_color' ); ?>">
+    <a href="<?php the_permalink(); ?>" class="project_summary supershadow" style="background-color:<?php  the_field( 'project_color' ); ?>">
       <div class="main_image">
         <?php  the_post_thumbnail( 'full' ); ?>
       </div>
@@ -10,6 +10,7 @@
           echo get_the_excerpt();
         } else {} ?>
         </p>
+        <button href="<?php the_permalink(); ?>" class="btn-6 supershadow">In Depth<span></span></button>
       </div>
     </a>
   </div>
