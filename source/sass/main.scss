@@ -568,6 +568,7 @@ div.wpcf7-mail-sent-ok {
   transition: all 0.5s ease-out 0s;
   transform: translate(-100px, -40px);
   opacity: 0;
+  align-items: center;
 }
 .project_summary .main_image {
   flex-basis: 30%;
@@ -581,6 +582,19 @@ div.wpcf7-mail-sent-ok {
   transition: all 0.5s ease-out 0.2s;
   transform: translate(1px, -40px);
   opacity: 1;
+}
+.project_summary .description {
+  background-color: #fff;
+  transform: rotate3d(0.5, 0.6, 0.2, 25deg) translateX(360px);
+  opacity: 0;
+  padding: 20px;
+  flex-basis: 55%;
+  transition: all 0.5s ease-out 0s;
+}
+.fp-table.active .project_summary .description {
+  transform: rotateX(11deg) rotateY(5deg) rotateZ(3deg) translateX(200px);
+  opacity: 1;
+  transition: all 0.5s ease-out 0.8s;
 }
 /* NEW MENU BUTTON */
 
