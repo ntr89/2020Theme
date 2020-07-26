@@ -17,9 +17,9 @@
 							</a>
 						</div>
 			<!--<div class="btn-6"><span></span><a href="#" class="burger-menu"><span>Menu</span></a></div> -->
-			<div class="header_button">	
+			<div class="header_button supershadow">	
 				<i class="fa fa-search ntr-search" aria-hidden="true"></i>
-			<a href="#" class="button_for_menu btn-6 supershadow">
+			<a href="#" class="button_for_menu btn-6">
 					<div class="hider8">Menu</div>
 					<div class="line_z"></div>
 					<span></span>
