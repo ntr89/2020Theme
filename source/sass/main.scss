@@ -5,6 +5,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   font-size: 18px;
+  line-height: 1.4em;
 }
 body,
 h1,
@@ -595,7 +596,7 @@ section:nth-child(odd) .project_summary {
   transition: all 0.5s ease-out 0s;
 }
 .fp-table.active .project_summary .description {
-  transform: rotateX(11deg) rotateY(5deg) rotateZ(3deg) translateX(200px);
+  transform: rotateX(11deg) rotateY(8deg) rotate(0deg) translateX(200px);
   opacity: 1;
   transition: all 0.5s ease-out 0.8s;
 }
