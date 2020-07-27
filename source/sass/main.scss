@@ -574,6 +574,7 @@ div.wpcf7-mail-sent-ok {
   transform: translate(-100px, -40px);
   opacity: 0;
   align-items: center;
+  z-index: 200;
 }
 .project_summary .main_image {
   flex-basis: 30%;
@@ -583,7 +584,7 @@ div.wpcf7-mail-sent-ok {
   width: 100%;
   height: auto;
 }
-section:nth-child(odd) .project_summary {
+section:nth-child(even) .project_summary {
   transform: translate(100px, -40px);
 }
 .fp-table.active .project_summary {
@@ -591,20 +592,34 @@ section:nth-child(odd) .project_summary {
   transform: rotateX(-5deg) rotateY(8deg) rotate(0deg) translate(1px, -40px);
   opacity: 1;
   border-radius: 50px;
+  box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.75),
+    -2px -2px 0px 0px rgba(0, 0, 0, 0.75), 0 1px 1px rgba(0, 0, 0, 0.03),
+    0 2px 2px rgba(0, 0, 0, 0.03), 0 4px 4px rgba(0, 0, 0, 0.03),
+    0 8px 8px rgba(0, 0, 0, 0.03), 0 16px 16px rgba(0, 0, 0, 0.03);
 }
 .project_summary .description {
   background-color: #fff;
-  transform: rotate3d(0.5, 0.6, 0.2, 25deg) translateX(360px);
+  transform: rotateX(0deg) rotateY(0deg) rotate(1deg) translateX(200px);
   opacity: 0;
   padding: 40px;
   flex-basis: 55%;
   transition: all 0.5s ease-out 0s;
   border-radius: 40px;
+  box-shadow: 1px -1px 0px 0px rgba(0, 0, 0, 0.75),
+    2px -2px 0px 0px rgba(0, 0, 0, 0.75), 0 1px 1px rgba(0, 0, 0, 0.03),
+    0 2px 2px rgba(0, 0, 0, 0.03), 0 4px 4px rgba(0, 0, 0, 0.03),
+    0 8px 8px rgba(0, 0, 0, 0.03), 0 16px 16px rgba(0, 0, 0, 0.03);
 }
 .fp-table.active .project_summary .description {
-  transform: rotateX(15deg) rotateY(8deg) rotate(0deg) translateX(200px);
+  transform: rotateX(0deg) rotateY(10deg) rotate(1deg) translateX(200px);
   opacity: 1;
   transition: all 0.5s ease-out 0.8s;
+}
+.fp-table.active .project_summary .description:hover {
+  transform: rotateX(0deg) rotateY(0) rotate(1deg) translateX(200px);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03),
+    0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
+    0 16px 16px rgba(0, 0, 0, 0.03);
 }
 .project_summary button {
   padding: 30px;
@@ -612,6 +627,19 @@ section:nth-child(odd) .project_summary {
   background-color: #ffffff;
   border: none;
   cursor: pointer;
+}
+.fp-table .fadeInScreen {
+  background-color: #ffffff;
+  transition: all 0.5s ease-out 0s;
+  opacity: 1;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+}
+.fp-table.active .fadeInScreen {
+  opacity: 0;
+  transition: all 0.5s ease-out 1.8s;
 }
 /* NEW MENU BUTTON */
 
