@@ -575,12 +575,13 @@ div.wpcf7-mail-sent-ok {
   opacity: 0;
   align-items: center;
   z-index: 200;
+  perspective: 1000px;
 }
 .project_summary .main_image {
   flex-basis: 30%;
 }
 .project_summary .main_image img {
-  padding: 60px;
+  padding: 0 60px 120px;
   width: 100%;
   height: auto;
 }
@@ -599,7 +600,7 @@ section:nth-child(even) .project_summary {
 }
 .project_summary .description {
   background-color: #fff;
-  transform: rotateX(0deg) rotateY(0deg) rotate(1deg) translateX(200px);
+  transform: rotateX(0deg) rotateY(0deg) rotate(1deg) translateX(200px) scale(1);
   opacity: 0;
   padding: 40px;
   flex-basis: 55%;
@@ -611,12 +612,13 @@ section:nth-child(even) .project_summary {
     0 8px 8px rgba(0, 0, 0, 0.03), 0 16px 16px rgba(0, 0, 0, 0.03);
 }
 .fp-table.active .project_summary .description {
-  transform: rotateX(0deg) rotateY(10deg) rotate(1deg) translateX(200px);
+  transform: rotateX(0deg) rotateY(10deg) rotate(1deg) translateX(200px)
+    scale(1);
   opacity: 1;
   transition: all 0.5s ease-out 0.8s;
 }
 .fp-table.active .project_summary .description:hover {
-  transform: rotateX(0deg) rotateY(0) rotate(1deg) translateX(200px);
+  transform: rotateX(0deg) rotateY(0) rotate(1deg) translateX(200px) scale(1.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03),
     0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
     0 16px 16px rgba(0, 0, 0, 0.03);
@@ -630,7 +632,7 @@ section:nth-child(even) .project_summary {
 }
 .fp-table .fadeInScreen {
   background-color: #ffffff;
-  transition: all 0.5s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
   opacity: 1;
   position: absolute;
   height: 100vh;
@@ -640,6 +642,31 @@ section:nth-child(even) .project_summary {
 .fp-table.active .fadeInScreen {
   opacity: 0;
   transition: all 0.5s ease-out 1.8s;
+}
+.fp-table .additional_images_holder {
+  opacity: 0;
+  position: absolute;
+  bottom: 100px;
+  padding: 40px;
+  transition: all 0.5s ease-out 0s;
+}
+.fp-table.active .additional_images_holder {
+  opacity: 1;
+  transition: all 0.5s ease-out 1.8s;
+}
+.fp-table .theLaptop {
+  background-image: url("/wp-content/themes/2020Theme/images/laptop-new-small.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 193px;
+  position: absolute;
+}
+.fp-table .theLaptop .theScreen {
+  overflow: hidden;
+  position: absolute;
+  width: 250px;
+  height: 126px;
 }
 /* NEW MENU BUTTON */
 
