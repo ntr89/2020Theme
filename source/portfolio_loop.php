@@ -6,6 +6,7 @@
           <?php  the_post_thumbnail( 'full' ); ?>
           <div class="additional_images_holder">
             <div class="theLaptop">
+              <img src="/wp-content/themes/2020Theme/images/laptop-new-small.png" class="laptop_frame">
               <div class="theScreen">
             <img src="<?php  the_field( 'desktop_picture' ); ?>" class="" >
             </div>

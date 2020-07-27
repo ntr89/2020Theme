@@ -660,18 +660,24 @@ section:nth-child(even) .project_summary {
   width: 300px;
   height: 193px;
   position: absolute;
+  perspective: 1000px;
 }
 .fp-table .theLaptop .theScreen {
   overflow: hidden;
   position: absolute;
-  width: 170px;
-  left: 29px;
-  top: 10px;
+  width: 181px;
+  left: 22px;
+  top: 13px;
   height: 127px;
-  transform: rotateX(-14deg) rotateY(9deg) rotate(0deg) rotate(0deg);
+  transform: rotateX(19deg) rotateY(18deg) rotate(351deg);
 }
 .fp-table .theLaptop .theScreen img {
   padding: 0 !important;
+}
+.laptop_frame {
+  padding: 0 !important;
+  position: relative;
+  z-index: 77;
 }
 /* NEW MENU BUTTON */
 
