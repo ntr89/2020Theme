@@ -5,7 +5,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   font-size: 18px;
-  line-height: 1.4em;
+  line-height: 1.6em;
 }
 body,
 h1,
@@ -600,7 +600,7 @@ section:nth-child(even) .project_summary {
 }
 .project_summary .description {
   background-color: #fff;
-  transform: rotateX(0deg) rotateY(0deg) rotate(1deg) translateX(200px) scale(1);
+  transform: rotateX(0deg) rotateY(0deg) rotate(1deg) translateX(20%) scale(1);
   opacity: 0;
   padding: 40px;
   flex-basis: 55%;
@@ -612,13 +612,12 @@ section:nth-child(even) .project_summary {
     0 8px 8px rgba(0, 0, 0, 0.03), 0 16px 16px rgba(0, 0, 0, 0.03);
 }
 .fp-table.active .project_summary .description {
-  transform: rotateX(0deg) rotateY(-3deg) rotate(1deg) translateX(200px)
-    scale(1);
+  transform: rotateX(0deg) rotateY(-3deg) rotate(1deg) translateX(20%) scale(1);
   opacity: 1;
   transition: all 0.5s ease-out 1.2s;
 }
 .fp-table.active .project_summary .description:hover {
-  transform: rotateX(0deg) rotateY(0) rotate(1deg) translateX(200px) scale(1.05);
+  transform: rotateX(0deg) rotateY(0) rotate(1deg) translateX(20%) scale(1.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03),
     0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
     0 16px 16px rgba(0, 0, 0, 0.03);
