@@ -571,10 +571,11 @@ div.wpcf7-mail-sent-ok {
   position: relative;
   display: flex;
   transition: all 0.5s ease-out 0s;
-  transform: translate(-100px, -40px);
+  transform: rotateX(0deg) rotateY(0deg) rotate(0deg) translate(1px, -40px);
   opacity: 0;
   align-items: center;
   z-index: 200;
+  border-radius: 50px;
   perspective: 1000px;
 }
 .project_summary .main_image {
@@ -589,10 +590,9 @@ section:nth-child(even) .project_summary {
   transform: translate(100px, -40px);
 }
 .fp-table.active .project_summary {
-  transition: all 0.5s ease-out 0.2s;
+  transition: all 0.5s ease-out 0.5s;
   transform: rotateX(-5deg) rotateY(8deg) rotate(0deg) translate(1px, -40px);
   opacity: 1;
-  border-radius: 50px;
   box-shadow: -1px -1px 0px 0px rgba(0, 0, 0, 0.75),
     -2px -2px 0px 0px rgba(0, 0, 0, 0.75), 0 1px 1px rgba(0, 0, 0, 0.03),
     0 2px 2px rgba(0, 0, 0, 0.03), 0 4px 4px rgba(0, 0, 0, 0.03),
@@ -612,10 +612,10 @@ section:nth-child(even) .project_summary {
     0 8px 8px rgba(0, 0, 0, 0.03), 0 16px 16px rgba(0, 0, 0, 0.03);
 }
 .fp-table.active .project_summary .description {
-  transform: rotateX(0deg) rotateY(10deg) rotate(1deg) translateX(200px)
+  transform: rotateX(0deg) rotateY(-3deg) rotate(1deg) translateX(200px)
     scale(1);
   opacity: 1;
-  transition: all 0.5s ease-out 0.8s;
+  transition: all 0.5s ease-out 1.2s;
 }
 .fp-table.active .project_summary .description:hover {
   transform: rotateX(0deg) rotateY(0) rotate(1deg) translateX(200px) scale(1.05);
@@ -665,8 +665,14 @@ section:nth-child(even) .project_summary {
 .fp-table .theLaptop .theScreen {
   overflow: hidden;
   position: absolute;
-  width: 250px;
-  height: 126px;
+  width: 170px;
+  left: 29px;
+  top: 10px;
+  height: 127px;
+  transform: rotateX(-14deg) rotateY(9deg) rotate(0deg) rotate(0deg);
+}
+.fp-table .theLaptop .theScreen img {
+  padding: 0 !important;
 }
 /* NEW MENU BUTTON */
 
