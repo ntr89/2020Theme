@@ -44,34 +44,64 @@
     }
 
     getResults() {
-      $.when(
-        $.getJSON(
-          localSite.root_url +
-            "/wp-json/wp/v2/project?search=" +
-            this.searchInput.val()
-        ),
-        $.getJSON(
-          localSite.root_url +
-            "/wp-json/wp/v2/pages?search=" +
-            this.searchInput.val()
-        )
-      ).then(
-        (data, pages) => {
-          var combineResults = data[0].concat(pages[0]);
+      $.getJSON(
+        localSite.root_url +
+          "/wp-json/ntrSite/v1/search?term=" +
+          this.searchInput.val(),
+        (results) => {
           this.searchResults.html(`
-  <h2>General Info<h2>
-  ${combineResults.length ? "<ul>" : "<p>No results found</p>"}
-  ${combineResults
-    .map((item) => `<li><a href="${item.link}">${item.title.rendered}</a></li>`)
-    .join("")}
-    ${combineResults.length ? "</ul>" : ""}
-  `);
+        <div class="row">
+          <div class="one-third">
+            
+            ${
+              results.general.length
+                ? "<h3>Pages</h3><ul>"
+                : "<p>No results found</p>"
+            }
+            ${results.general
+              .map(
+                (item) =>
+                  `<li><a href="${item.permalink}">${item.title}</a></li>`
+              )
+              .join("")}
+              ${results.general.length ? "</ul>" : ""}
+          </div>
+          <div class="one-third">
+          
+          ${
+            results.projects.length
+              ? "<h3>Projects</h3><ul>"
+              : "<p>No results found</p>"
+          }
+          ${results.projects
+            .map(
+              (item) => `<li><a href="${item.permalink}">${item.title}</a></li>`
+            )
+            .join("")}
+            ${results.projects.length ? "</ul>" : ""}
+          </div>
+          <div class="one-third last">
+          
+          ${
+            results.posts.length
+              ? "<h3>Posts</h3><ul>"
+              : "<p>No results found</p>"
+          }
+            ${results.posts
+              .map(
+                (item) =>
+                  `<li><a href="${item.permalink}">${item.title} ${
+                    item.postType == "post" ? `${item.postDate}` : ""
+                  }</a></li>`
+              )
+              .join("")}
+              ${results.posts.length ? "</ul>" : ""}
+          </div>  
+        </div>`);
           this.spinnerVisible = false;
-        },
-        () => {
-          this.searchResults.html("<p>Unexpected Error, please try again</p>");
         }
       );
+      // Delete this code later
     }
 
     keyPressDispatcher(e) {

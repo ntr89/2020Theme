@@ -20,7 +20,7 @@ function portfolio_stuff() {
           'root_url' => get_site_url()
       ));
   }
-  
+
   add_action('wp_enqueue_scripts', 'portfolio_stuff');
 
 
@@ -72,7 +72,8 @@ function wpdocs_codex_book_init() {
         'menu_position'      => null,
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
         'taxonomies'         => array( 'category', 'post_tag' ),
-        'show_in_rest'       => true
+        'show_in_rest'       => true,
+        'rest_controller_class' => 'WP_REST_Posts_Controller',
     );
  
     register_post_type( 'project', $args );
