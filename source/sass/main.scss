@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-size: 18px;
   line-height: 1.6em;
+  -webkit-font-smoothing: antialiased;
 }
 body,
 h1,
@@ -16,6 +17,13 @@ h5,
 h6 {
   font-family: Roboto;
   margin-top: 0;
+}
+p {
+  color: #666666;
+  font-size: 18px;
+  line-height: 2em;
+  font-family: Open Sans, Arial, sans-serif;
+  font-weight: 500;
 }
 a {
   text-decoration: none;
@@ -897,14 +905,25 @@ section:nth-child(even) .project_summary {
   margin-bottom: 0 !important;
 }
 // PROJECT PAGE STYLES
+.clearfix {
+  clear: both;
+}
 #page_header {
   position: relative;
   float: left;
   width: 100%;
   padding: 120px 0;
+  color: #ffffff;
 }
+
 .project-template-default .container {
   max-width: 1080px;
+}
+.project-template-default .first_proj_image {
+  transform: translateY(-340px);
+}
+.wp-block-image {
+  margin: 0;
 }
 
 @media only screen and (max-width: 1200px) {
