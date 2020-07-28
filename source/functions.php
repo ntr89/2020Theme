@@ -10,6 +10,13 @@ function ntr_custom_rest() {
 
 add_action('rest_api_init', 'ntr_custom_rest');
 
+function front_page_scripts() {
+    if( is_front_page() )
+    {
+        wp_enqueue_script( 'full-page', get_theme_file_uri('/js/aFullPage.js'), array( 'jquery' ), '1.0', true );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'front_page_scripts' );
 function portfolio_stuff() {
     wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
     wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');

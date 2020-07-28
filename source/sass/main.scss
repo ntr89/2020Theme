@@ -896,6 +896,17 @@ section:nth-child(even) .project_summary {
 .wp-block-columns {
   margin-bottom: 0 !important;
 }
+// PROJECT PAGE STYLES
+#page_header {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 120px 0;
+}
+.project-template-default .container {
+  max-width: 1080px;
+}
+
 @media only screen and (max-width: 1200px) {
 }
 @media only screen and (max-width: 980px) {
