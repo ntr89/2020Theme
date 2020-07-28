@@ -536,7 +536,6 @@ div.wpcf7-mail-sent-ok {
   opacity: 1;
 }
 .left_home_ntr {
-  padding: 0 100px;
 }
 
 .left_home_ntr h2 {
@@ -916,7 +915,7 @@ section:nth-child(even) .project_summary {
   color: #ffffff;
 }
 
-.project-template-default .container {
+.container {
   max-width: 1080px;
 }
 .project-template-default .first_proj_image {
@@ -925,13 +924,20 @@ section:nth-child(even) .project_summary {
 .wp-block-image {
   margin: 0;
 }
-
+.wp-block-column:not(:first-child) {
+  flex-basis: 23.33% !important;
+  margin-left: 10%;
+}
 @media only screen and (max-width: 1200px) {
 }
 @media only screen and (max-width: 980px) {
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 781px) {
+  .wp-block-column {
+    flex-basis: 100% !important;
+    flex-grow: 1;
+  }
   #main_nav {
     left: 5%;
     top: 25%;
