@@ -621,7 +621,7 @@ section:nth-child(even) .project_summary {
     0 8px 8px rgba(0, 0, 0, 0.03), 0 16px 16px rgba(0, 0, 0, 0.03);
 }
 .fp-table.active .project_summary .description {
-  transform: rotateX(0deg) rotateY(-3deg) rotate(1deg) translateX(20%) scale(1);
+  transform: rotateX(0deg) rotateY(-3deg) rotate(2deg) translateX(20%) scale(1);
   opacity: 1;
   transition: all 0.5s ease-out 1.2s;
 }
@@ -630,6 +630,7 @@ section:nth-child(even) .project_summary {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03),
     0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
     0 16px 16px rgba(0, 0, 0, 0.03);
+  transition: all 0.5s ease-out 0s;
 }
 .project_summary button {
   padding: 30px;
@@ -637,6 +638,9 @@ section:nth-child(even) .project_summary {
   background-color: #ffffff;
   border: none;
   cursor: pointer;
+}
+.project_summary .description h3 {
+  color: #333333;
 }
 .fp-table .fadeInScreen {
   background-color: #ffffff;

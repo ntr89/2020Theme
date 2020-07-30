@@ -15,6 +15,10 @@
         </div>
         <div class="description supershadow">
           <h3 class=""><?php the_title(); ?></h3>
+          <?php $args = array(
+		'exclude' => '24'
+  );
+ return wp_list_categories($args); ?>
           <p><?php if (has_excerpt()) {
             echo get_the_excerpt();
           } else {} ?>
