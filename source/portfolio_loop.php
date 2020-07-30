@@ -15,15 +15,28 @@
         </div>
         <div class="description supershadow">
           <h3 class=""><?php the_title(); ?></h3>
-          <?php $args = array(
-		'exclude' => '24'
-  );
- return wp_list_categories($args); ?>
+          <?php
+$categories = get_categories( array(
+    'orderby' => 'name',
+    'order'   => 'ASC', 
+    'exclude' => array(1, 24)
+) );
+ 
+foreach( $categories as $category ) {
+    $category_link = sprintf( 
+        '%1$s',
+        esc_html( $category->name )
+    );
+     
+    echo sprintf( esc_html__( '%s | ', 'textdomain' ), $category_link );
+} 
+ ?>
           <p><?php if (has_excerpt()) {
             echo get_the_excerpt();
           } else {} ?>
           </p>
           Read more about this project >
+         
          </div>
       </a>
     </div>
