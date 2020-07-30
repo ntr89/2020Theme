@@ -11,6 +11,9 @@
             <img src="<?php  the_field( 'desktop_picture' ); ?>" class="" >
             </div>
             </div>
+            <div class="thePhone">
+              <img src="/wp-content/uploads/2020/07/mobile.png" class="phone_frame">
+</div>
           </div>
         </div>
         <div class="description supershadow">
@@ -28,7 +31,7 @@ foreach( $categories as $category ) {
         esc_html( $category->name )
     );
      
-    echo sprintf( esc_html__( '%s | ', 'textdomain' ), $category_link );
+    echo sprintf( esc_html__( '%s&nbsp;&nbsp;&nbsp;&nbsp;', 'textdomain' ), $category_link );
 } 
  ?>
           <p><?php if (has_excerpt()) {

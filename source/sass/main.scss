@@ -589,6 +589,7 @@ div.wpcf7-mail-sent-ok {
 }
 .project_summary .main_image {
   flex-basis: 30%;
+  position: relative;
 }
 .project_summary .main_image img {
   padding: 0 60px 120px;
@@ -660,16 +661,22 @@ section:nth-child(even) .project_summary {
   position: absolute;
   bottom: 100px;
   padding: 40px;
+  width: 100%;
   transition: all 0.5s ease-out 0s;
 }
 .fp-table.active .additional_images_holder {
   opacity: 1;
   transition: all 0.5s ease-out 1.8s;
 }
+
+.fp-table .thePhone {
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  perspective: 1000px;
+}
 .fp-table .theLaptop {
-  background-image: url("/wp-content/themes/2020Theme/images/laptop-new-small.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 300px;
   height: 193px;
   position: absolute;
