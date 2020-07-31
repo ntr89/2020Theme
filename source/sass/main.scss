@@ -531,13 +531,13 @@ div.wpcf7-mail-sent-ok {
 .fp-table .wp-image-4765 {
   opacity: 0;
   transition: all 0.8s ease-out 0s;
-  right: -200px;
+  transform: translateX(100px);
   position: relative;
   border-radius: 300px;
 }
 .fp-table.active .wp-image-4765 {
   transition: all 0.8s ease-out 0.5s;
-  right: 00px;
+  transform: translateX(0px);
   opacity: 1;
 }
 .left_home_ntr {
@@ -546,34 +546,40 @@ div.wpcf7-mail-sent-ok {
 .left_home_ntr h2 {
   opacity: 0;
   transition: all 0.8s ease-out 0s;
-  left: -60px;
+
+  transform: translateX(-60px);
   position: relative;
 }
 .fp-table.active .left_home_ntr h2 {
   transition: all 0.8s ease-out 0.2s;
-  left: 0px;
+
+  transform: translateX(0px);
   opacity: 1;
 }
 .left_home_ntr h3 {
   opacity: 0;
   transition: all 0.8s ease-out 0s;
-  left: -30px;
+
+  transform: translateX(-30px);
   position: relative;
 }
 .fp-table.active .left_home_ntr h3 {
   transition: all 0.8s ease-out 0.7s;
-  left: 0px;
+
+  transform: translateX(0px);
   opacity: 1;
 }
 .left_home_ntr p {
   opacity: 0;
   transition: all 0.8s ease-out 0s;
-  top: 10px;
+
+  transform: translateY(10px);
   position: relative;
 }
 .fp-table.active .left_home_ntr p {
   transition: all 0.8s ease-out 1.2s;
-  top: 0px;
+
+  transform: translateY(0px);
   opacity: 1;
 }
 // Porfolio Animation
