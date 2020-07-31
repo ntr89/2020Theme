@@ -694,18 +694,18 @@ section:nth-child(even) .project_summary {
   border-radius: 2px;
 }
 .fp-table .theLaptop {
-  width: 300px;
+  width: 371px;
   height: 193px;
   position: absolute;
-  top: 30px;
-  left: -2%;
+  top: 12px;
+  left: -11%;
   perspective: 1000px;
 }
 .fp-table .theLaptop .theScreen {
-  width: 181px;
-  left: 22px;
-  top: 13px;
-  height: 127px;
+  width: 229px;
+  left: 25px;
+  top: 15px;
+  height: 156px;
   transform: rotateX(19deg) rotateY(18deg) rotate(351deg);
 }
 .fp-table .theLaptop .theScreen img {
@@ -956,8 +956,6 @@ section:nth-child(even) .project_summary {
   margin: 0;
 }
 .wp-block-column:not(:first-child) {
-  flex-basis: 23.33% !important;
-  margin-left: 10%;
 }
 .project-template-default .left_top_corner {
   position: absolute;
