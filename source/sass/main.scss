@@ -980,6 +980,24 @@ section:nth-child(even) .project_summary {
   position: absolute;
   top: 0;
 }
+.project-template-default button {
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 100px;
+  font-family: Roboto, Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.project-template-default button:hover {
+  border: none;
+}
+.first-project-section {
+  padding-top: 40px;
+}
 @media only screen and (max-width: 1200px) {
 }
 @media only screen and (max-width: 980px) {

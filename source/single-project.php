@@ -19,7 +19,7 @@ get_header(); ?>
              <div class="clearfix"></div>
              <div>
              <div class="left_top_corner" style="background-color:<?php  the_field( 'project_color' ); ?>"><div class="filler"></div></div>
-            <div class="container container--narrow page-section">
+            <div class="container container--narrow page-section first-project-section">
                
             <?php
             while(have_posts()) {
