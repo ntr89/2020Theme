@@ -355,6 +355,9 @@ section {
   font-weight: 700;
   font-size: 20px;
 }
+#slider-19-slide-55-layer-0 .rs_splitted_words div {
+  text-shadow: 1px -1px 0px #ffffff, 2px -2px 0px #ffffff, 2px -3px 0px #ffffff;
+}
 .btn-6 {
   color: #282828 !important;
   z-index: 99;
@@ -670,21 +673,35 @@ section:nth-child(even) .project_summary {
 }
 
 .fp-table .thePhone {
-  width: 200px;
+  width: 130px;
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
   perspective: 1000px;
+}
+.fp-table .thePhone img {
+  padding: 0;
+}
+.theScreen {
+  overflow: hidden;
+  position: absolute;
+}
+.fp-table .thePhone .theScreen {
+  top: 29px;
+  width: 86%;
+  margin: 0 7%;
+  height: 200px;
+  border-radius: 2px;
 }
 .fp-table .theLaptop {
   width: 300px;
   height: 193px;
   position: absolute;
+  top: 30px;
+  left: -2%;
   perspective: 1000px;
 }
 .fp-table .theLaptop .theScreen {
-  overflow: hidden;
-  position: absolute;
   width: 181px;
   left: 22px;
   top: 13px;

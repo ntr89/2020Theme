@@ -13,6 +13,9 @@
             </div>
             <div class="thePhone">
               <img src="/wp-content/uploads/2020/07/mobile.png" class="phone_frame">
+              <div class="theScreen">
+            <img src="<?php  the_field( 'mobile_image' ); ?>" class="" >
+            </div>
 </div>
           </div>
         </div>
